@@ -26,7 +26,9 @@ describe 'when I enter my zip code' do
       expect(page).to have_content("Access Times:")
     end
 
-    # And the stations should be limited to Electric and Propane
-
+    page.all(:css, '.fuel_type').each do |el|
+      expression = el.text.include?("ELEC") || el.text.include?("LPG")
+      expect(expression).to eq(true)
+    end
   end
 end
