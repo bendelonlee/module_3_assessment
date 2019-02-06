@@ -19,7 +19,7 @@ describe 'when I enter my zip code' do
     expect(current_path).to eq("/search")
     expect(page).to have_css(".station", count: 10)
     within(first(".station")) do
-      expect(page).to have_content("Name:")
+      expect(page).to have_css(".station_name")
       expect(page).to have_content("Address:")
       expect(page).to have_content("Fuel Types:")
       expect(page).to have_content("Distance:")

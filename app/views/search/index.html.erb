@@ -2,7 +2,7 @@
 <ol>
   <% @search.stations.each do |station| %>
     <li class="station">
-      <h4>Name: <%= station.name %></h4>
+      <h4 class="station-name"><%= station.name %></h4>
       <ul>
         <li>Address: <%= station.address %></li>
         <li class="fuel_type">Fuel Types: <%= station.fuel_types.join(",") %></li>
