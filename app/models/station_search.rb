@@ -5,8 +5,15 @@ class StationSearch
   end
 
   def stations
-    NrelFuelStationService.new().stations(@zipcode).map do |data|
+    service.stations(@zipcode).map do |data|
       Station.new(data)
     end
   end
+
+  private
+
+  def service
+    NrelFuelStationService.new()
+  end
+
 end
