@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 gem 'rails', '5.1.4'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0.6'
@@ -27,4 +28,3 @@ group :test do
   gem 'webmock'
   gem 'capybara'
 end
-
