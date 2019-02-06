@@ -1,12 +1,14 @@
 <h2>10 stations nearest to <%= @search.zipcode %></h2>
-<% @search.stations.each do |station| %>
-  <div class="station">
-    <ul>
-      <li>Name: <%= station.name %></li>
-      <li>Address: <%= station.address %></li>
-      <li>Fuel Types: <%= station.fuel_types.join(",") %></li>
-      <li>Distance: <%= station.distance %> miles</li>
-      <li>Access Times: <%= station.distance %> miles</li>
-    </ul>
-  </div>
-<% end %>
+<ol>
+  <% @search.stations.each do |station| %>
+    <li class="station">
+      <h4>Name: <%= station.name %></h4>
+      <ul>
+        <li>Address: <%= station.address %></li>
+        <li>Fuel Types: <%= station.fuel_types.join(",") %></li>
+        <li>Distance: <%= station.distance %> miles</li>
+        <li>Access Times: <%= station.distance %> miles</li>
+      </ul>
+    </li>
+  <% end %>
+</ol>
