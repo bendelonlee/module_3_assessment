@@ -30,5 +30,12 @@ describe 'when I enter my zip code' do
       expression = el.text.include?("ELEC") || el.text.include?("LPG")
       expect(expression).to eq(true)
     end
+
+    distances = page.all(:css, '.distance').map do |el|
+       el.text.to_f
+    end
+
+    expect(distances.max).to be <= 6
+    expect(distances).to eq(distances.sort)
   end
 end
