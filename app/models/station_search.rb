@@ -1,5 +1,5 @@
 class StationSearch
-  attr_reader :stations
+  attr_reader :stations, :zipcode
   def initialize(zipcode)
     @zipcode = zipcode
   end

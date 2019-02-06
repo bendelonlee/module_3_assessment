@@ -13,6 +13,8 @@ describe 'when I enter my zip code' do
     visit "/"
     fill_in :q, with: 80203
     click_on "Locate"
+    save_and_open_page
+    expect(page).to have_content("10 stations nearest to 80203")
     expect(current_path).to eq("/search")
     expect(page).to have_css(".station", count: 10)
     within(first(".station")) do
